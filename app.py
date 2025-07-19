@@ -101,7 +101,7 @@ def konversi_df_ke_csv_bytes(dataframe):
 
 
 #logo
-logo_path = "images/logooku.png"
+logo_path = "images/logos.png"
 st.sidebar.image(logo_path, use_container_width=50)
 
 sidebar = """
@@ -151,9 +151,9 @@ menu = st.sidebar.selectbox("Menu", ["Home", "Masukan Dataset", "Model", "Predik
 
 
 if menu == "Home":
-    st.title("Analisis Sentimen Politik Indonesia - Prabowo Gibran")
+    st.title("SentiLensAI: Analisis Sentimen Politik Indonesia - Prabowo Gibran")
     st.write(
-        "Aplikasi ini dirancang untuk memfasilitasi proses analisis dan visualisasi sentimen terhadap opini publik mengenai pemerintahan Prabowo–Gibran. Sistem ini mendukung evaluasi berbagai model analisis sentimen dengan input berupa data teks dari media sosial dalam bahasa Indonesia, bahasa Inggris, serta campuran bahasa Indonesia dan Inggris yaitu code mixed text."
+        "Selamat Datang! Aplikasi ini dirancang untuk memfasilitasi proses analisis dan visualisasi sentimen terhadap opini publik mengenai pemerintahan Prabowo–Gibran. Sistem ini mendukung evaluasi berbagai model analisis sentimen dengan input berupa data teks dari media sosial dalam bahasa Indonesia, bahasa Inggris, serta campuran bahasa Indonesia dan Inggris yaitu code mixed text."
     )
     st.write("---")
 
@@ -181,7 +181,7 @@ if menu == "Home":
 
     with col_info1:
         with st.container(border=True):
-            st.markdown("#### ❓ Apa itu Aplikasi Ini?")
+            st.markdown("#### Apa itu SentiLensAI?")
             st.write(
                 "Sebuah alat bantu berbasis web yang dirancang untuk menganalisis sentimen "
                 "(positif atau negatif) dari teks opini publik. Aplikasi ini mampu memproses teks dalam "
@@ -198,7 +198,7 @@ if menu == "Home":
 
     with col_info2:
         with st.container(border=True):
-            st.markdown("#### 🛠️ Teknologi yang Digunakan")
+            st.markdown("#### Teknologi yang Digunakan")
             st.markdown(
                 """
                 - **Model Utama**: `nurulfauzh/nurul-fauziah-indobert` (Model IndoBERT yang telah di-*fine-tuning*).
@@ -445,11 +445,10 @@ elif menu == "Model":
 
 elif menu == "Prediksi Sentimen":
     st.title("Prediksi Sentimen")
-    st.write("Masukkan teks untuk dianalisis sentimennya.")
     
-    # Memastikan tidak ada gambar atau konten lain dari halaman Home
+
     user_input = st.text_area(
-        "Teks untuk dianalisis:", 
+        "Masukkan teks untuk dianalisis sentimennya:", 
         height=150, 
         placeholder="Contoh: Kinerja pemerintah sangat bagus dan I love it!"
     )
