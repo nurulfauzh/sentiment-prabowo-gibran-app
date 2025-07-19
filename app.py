@@ -22,8 +22,6 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import re
 import os
 
-# --- 2. FUNGSI PREPROCESSING ---
-# Fungsi ini adalah 'jantung' dari konsistensi. Semua teks HARUS melewati fungsi ini.
 def preprocess_text(text, normalization_dict, stopwords_list):
     """
     Membersihkan dan menstandarkan teks input dari pengguna.
@@ -45,7 +43,6 @@ def preprocess_text(text, normalization_dict, stopwords_list):
         st.error(f"Error saat preprocessing: {e}")
         return ""
 
-# --- 3. FUNGSI UTAMA UNTUK MEMUAT SEMUA KOMPONEN ---
 @st.cache_resource
 def load_all_resources():
     """
@@ -84,7 +81,6 @@ def load_all_resources():
             
     return model, tokenizer, normalization_dict, stopwords_list, lexicon
 
-# --- 4. INISIALISASI ---
 model, tokenizer, normalization_dict, stopwords_list, lexicon = load_all_resources()
 
 @st.cache_data
@@ -178,37 +174,48 @@ if menu == "Home":
             st.image(foto_wapres, use_container_width=True)
         else:
             st.warning("Gambar Wakil Presiden tidak ditemukan di path: " + foto_wapres)
-    #deskripsi fitur
-    st.header("Fitur Aplikasi ")
+    # --- BAGIAN BARU (PENGGANTI FITUR APLIKASI) ---
+    st.header("Tentang Aplikasi")
     
-    col1, col2, col3 = st.columns(3, gap="large")
+    col_info1, col_info2 = st.columns(2, gap="large")
 
-
-    with col1:
+    with col_info1:
         with st.container(border=True):
-            st.markdown("#### Masukan Dataset")
+            st.markdown("#### ❓ Apa itu Aplikasi Ini?")
             st.write(
-                "Unggah file CSV Anda untuk menampilkan ringkasan data, distribusi sentimen, dan visualisasi WordCloud secara otomatis."
+                "Sebuah alat bantu berbasis web yang dirancang untuk menganalisis sentimen "
+                "(positif atau negatif) dari teks opini publik. Aplikasi ini mampu memproses teks dalam "
+                "Bahasa Indonesia, Bahasa Inggris, dan campuran keduanya (*Code-Mixed*)."
+            )
+            st.markdown("##### Fitur Unggulan:")
+            st.markdown(
+                """
+                - **Visualisasi Data Interaktif**: Unggah dataset dan lihat distribusi sentimen serta *word cloud*.
+                - **Perbandingan Kinerja Model**: Evaluasi berbagai model AI dengan metrik yang jelas.
+                - **Prediksi Sentimen Real-Time**: Analisis sentimen dari satu kalimat secara langsung.
+                """
             )
 
-    with col2:
+    with col_info2:
         with st.container(border=True):
-            st.markdown("#### Model")
-            st.write(
-                "Bandingkan performa berbagai model analisis sentimen yang telah dilatih menggunakan metrik evaluasi seperti Akurasi, F1-Score, dan Confusion Matrix."
+            st.markdown("#### 🛠️ Teknologi yang Digunakan")
+            st.markdown(
+                """
+                - **Model Utama**: `nurulfauzh/nurul-fauziah-indobert` (Model IndoBERT yang telah di-*fine-tuning*).
+                - **Framework**: Aplikasi ini dibangun menggunakan **Streamlit**.
+                - **Dataset Latih**: Model dilatih pada dataset opini dari media sosial X dalam bahasa Indonesia, Inggris, dan *Code-Mixed*.
+                - **Library Inti**: Pemanrosesan data dan pemodelan ditenagai oleh **Hugging Face Transformers** dan **PyTorch**.
+                """
             )
 
-    with col3:
-        with st.container(border=True):
-            st.markdown("#### Prediksi Sentimen")
-            st.write(
-                "Masukkan satu opini atau kalimat untuk mengetahui sentimennya secara langsung melalui prediksi real-time."
-            )
+    st.info(
+        "Aplikasi ini dikembangkan murni untuk tujuan penelitian dalam rangka penyelesaian tugas akhir dan "
+        "tidak dimaksudkan untuk mendiskreditkan pihak manapun."
+    )
+
 
     
-# =======================================================================================================
-#                                           HALAMAN MASUKAN DATASET
-# =======================================================================================================
+# halaman Masukan Dataset
 elif menu == "Masukan Dataset":
     st.header("Masukan Dataset")
     uploaded_file = st.file_uploader("Unggah dataset CSV Anda", type="csv")
@@ -339,7 +346,7 @@ elif menu == "Masukan Dataset":
             st.error(f"Terjadi kesalahan saat memproses file: {e}")
 #===================================================================================================================================================#
 
-
+# halaman Model
 elif menu == "Model":
     st.title("Evaluasi dan Perbandingan Model")
 
@@ -434,7 +441,7 @@ elif menu == "Model":
                         st.plotly_chart(fig, use_container_width=True)
 #-------------------------------------------------------------------------------------------------------------------------------------------#
 
-# Prediksi Sentimen
+# halaman Prediksi Sentimen
 
 elif menu == "Prediksi Sentimen":
     st.title("Prediksi Sentimen")
