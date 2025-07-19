@@ -1,0 +1,218 @@
+{
+  "BERT": {
+    "Code-Mixed": {
+      "accuracy": 0.82,
+      "precision": 0.82,
+      "recall": 0.82,
+      "f1_score": 0.82,
+      "conf_matrix": "BERT_codemixed.png"
+    },
+    "Inggris": {
+      "accuracy": 0.91,
+      "precision": 0.91,
+      "recall": 0.91,
+      "f1_score": 0.91,
+      "conf_matrix": "BERT_english.png"
+    }
+  },
+  "IndoBERT": {
+    "Code-Mixed": {
+      "accuracy": 0.8,
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1_score": 0.8,
+      "conf_matrix": "IndoBERT_codemixed.png"
+    },
+    "Indonesia": {
+      "accuracy": 0.85,
+      "precision": 0.85,
+      "recall": 0.85,
+      "f1_score": 0.85,
+      "conf_matrix": "IndoBERT_indonesia.png"
+    }
+  },
+  "DistilBERT": {
+    "Code-Mixed": {
+      "accuracy": 0.78,
+      "precision": 0.78,
+      "recall": 0.78,
+      "f1_score": 0.78,
+      "conf_matrix": "DistilBERT_codemixed.png"
+    },
+    "Indonesia": {
+      "accuracy": 0.81,
+      "precision": 0.81,
+      "recall": 0.81,
+      "f1_score": 0.8,
+      "conf_matrix": "DistilBERT_indonesia.png"
+    },
+    "Inggris": {
+      "accuracy": 0.9,
+      "precision": 0.9,
+      "recall": 0.9,
+      "f1_score": 0.9,
+      "conf_matrix": "DistilBERT_english.png"
+    }
+  },
+  "mBERT": {
+    "Code-Mixed": {
+      "accuracy": 0.82,
+      "precision": 0.81,
+      "recall": 0.82,
+      "f1_score": 0.81,
+      "conf_matrix": "mBERT_codemixed.png"
+    },
+    "Indonesia": {
+      "accuracy": 0.81,
+      "precision": 0.81,
+      "recall": 0.81,
+      "f1_score": 0.81,
+      "conf_matrix": "mBERT_indonesia.png"
+    },
+    "Inggris": {
+      "accuracy": 0.85,
+      "precision": 0.85,
+      "recall": 0.85,
+      "f1_score": 0.85,
+      "conf_matrix": "mBERT_english.png"
+    }
+  },
+  "LSTM": {
+    "Code-Mixed": {
+      "accuracy": 0.8,
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1_score": 0.8,
+      "conf_matrix": "LSTM_codemixed.png"
+    },
+    "Indonesia": {
+      "accuracy": 0.77,
+      "precision": 0.77,
+      "recall": 0.77,
+      "f1_score": 0.76,
+      "conf_matrix": "LSTM_indonesia.png"
+    },
+    "Inggris": {
+      "accuracy": 0.71,
+      "precision": 0.71,
+      "recall": 0.71,
+      "f1_score": 0.7,
+      "conf_matrix": "LSTM_english.png"
+    }
+  },
+  "BiLSTM": {
+    "Code-Mixed": {
+      "accuracy": 0.81,
+      "precision": 0.81,
+      "recall": 0.81,
+      "f1_score": 0.8,
+      "conf_matrix": "BiLSTM_codemixed.png"
+    },
+    "Indonesia": {
+      "accuracy": 0.78,
+      "precision": 0.77,
+      "recall": 0.78,
+      "f1_score": 0.77,
+      "conf_matrix": "BiLSTM_indonesia.png"
+    },
+    "Inggris": {
+      "accuracy": 0.78,
+      "precision": 0.78,
+      "recall": 0.78,
+      "f1_score": 0.77,
+      "conf_matrix": "BiLSTM_english.png"
+    }
+  },
+  "mBERT - BiLSTM": {
+    "Code-Mixed": {
+      "accuracy": 0.8,
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1_score": 0.79,
+      "conf_matrix": "mBERT_BiLSTM_codemixed.png"
+    },
+    "Indonesia": {
+      "accuracy": 0.74,
+      "precision": 0.74,
+      "recall": 0.74,
+      "f1_score": 0.74,
+      "conf_matrix": "mBERT_BiLSTM_indonesia.png"
+    },
+    "Inggris": {
+      "accuracy": 0.8,
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1_score": 0.8,
+      "conf_matrix": "mBERT_BiLSTM_english.png"
+    }
+  },
+  "SVM": {
+    "Code-Mixed": {
+      "accuracy": 0.75,
+      "precision": 0.76,
+      "recall": 0.75,
+      "f1_score": 0.73,
+      "conf_matrix": "SVM_codemixed.png"
+    },
+    "Indonesia": {
+      "accuracy": 0.64,
+      "precision": 0.64,
+      "recall": 0.64,
+      "f1_score": 0.58,
+      "conf_matrix": "SVM_indonesia.png"
+    },
+    "Inggris": {
+      "accuracy": 0.56,
+      "precision": 0.56,
+      "recall": 0.56,
+      "f1_score": 0.51,
+      "conf_matrix": "SVM_english.png"
+    }
+  },
+  "Random_Forest": {
+    "Code-Mixed": {
+      "accuracy": 0.76,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1_score": 0.74,
+      "conf_matrix": "Random_Forest_codemixed.png"
+    },
+    "Indonesia": {
+      "accuracy": 0.63,
+      "precision": 0.61,
+      "recall": 0.63,
+      "f1_score": 0.59,
+      "conf_matrix": "Random_Forest_indonesia.png"
+    },
+    "Inggris": {
+      "accuracy": 0.55,
+      "precision": 0.54,
+      "recall": 0.55,
+      "f1_score": 0.51,
+      "conf_matrix": "Random_Forest_english.png"
+    }
+  },
+  "Naive_Bayes": {
+    "Code-Mixed": {
+      "accuracy": 0.76,
+      "precision": 0.76,
+      "recall": 0.76,
+      "f1_score": 0.75,
+      "conf_matrix": "Naive_Bayes_codemixed.png"
+    },
+    "Indonesia": {
+      "accuracy": 0.64,
+      "precision": 0.64,
+      "recall": 0.64,
+      "f1_score": 0.58,
+      "conf_matrix": "Naive_Bayes_indonesia.png"
+    },
+    "Inggris": {
+      "accuracy": 0.54,
+      "precision": 0.53,
+      "recall": 0.54,
+      "f1_score": 0.5,
+      "conf_matrix": "Naive_Bayes_english.png"
+    }
+  }
+}
