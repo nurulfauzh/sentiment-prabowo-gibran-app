@@ -200,7 +200,7 @@ if menu == "Home":
             st.markdown("#### Teknologi yang Digunakan")
             st.markdown(
                 """
-                - **Model Utama**: `nurulfauzh/nurul-fauziah-indobert` (Model IndoBERT yang telah di-*fine-tuning*).
+                - **Model Utama**: Model yang telah difine-tuning.
                 - **Framework**: Aplikasi ini dibangun menggunakan **Streamlit**.
                 - **Dataset Latih**: Model dilatih pada dataset opini dari media sosial X dalam bahasa Indonesia, Inggris, dan *Code-Mixed*.
                 - **Library Inti**: Pemanrosesan data dan pemodelan ditenagai oleh **Hugging Face Transformers** dan **PyTorch**.
