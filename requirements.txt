@@ -3,7 +3,8 @@ pandas
 numpy
 torch
 transformers
+scikit-learn
 matplotlib
 wordcloud
-scikit-learn
 plotly
+huggingface_hub
