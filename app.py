@@ -1,4 +1,3 @@
-# --- Standard Library Imports ---
 import json
 import os
 import pickle
@@ -238,33 +237,6 @@ elif menu == "Masukan Dataset":
                 dataset_type = "inggris"
             st.info(f"Tipe Dataset Terdeteksi (dari nama file): **{dataset_type.capitalize()}**")
             
-            # Pembagian Dataset
-            st.divider()
-            st.subheader("Bagi dan Unduh Data Latih/Uji")
-            if st.button("Bagi & Siapkan Data untuk Unduh"):
-                kolom_target_untuk_split = 'sentiment'
-                if kolom_target_untuk_split in df.columns and len(df) > 1:
-                    try:
-                        target_series = df[kolom_target_untuk_split]
-                        can_stratify = target_series.nunique() > 1 and all(target_series.value_counts() > 1)
-                        df_train, df_test = train_test_split(df, test_size=0.2, random_state=42, stratify=target_series if can_stratify else None)
-                        st.success("Dataset berhasil dipisah!")
-                        st.session_state['df_train_untuk_unduh'] = df_train
-                        st.session_state['df_test_untuk_unduh'] = df_test
-                    except Exception as e_split:
-                        st.error(f"Gagal memisahkan data: {e_split}")
-                else:
-                    st.warning(f"Kolom '{kolom_target_untuk_split}' tidak ditemukan atau data tidak cukup.")
-            
-            col_unduh1, col_unduh2 = st.columns(2)
-            with col_unduh1:
-                if 'df_train_untuk_unduh' in st.session_state:
-                    csv_train_bytes = konversi_df_ke_csv_bytes(st.session_state['df_train_untuk_unduh'])
-                    st.download_button("Unduh Data Latih (.csv)", csv_train_bytes, "data_train.csv", "text/csv")
-            with col_unduh2:
-                if 'df_test_untuk_unduh' in st.session_state:
-                    csv_test_bytes = konversi_df_ke_csv_bytes(st.session_state['df_test_untuk_unduh'])
-                    st.download_button("Unduh Data Uji (.csv)", csv_test_bytes, "data_test.csv", "text/csv")
             
             # Visualisasi Distribusi Sentimen (Sepenuhnya Dinamis)
             st.divider()
