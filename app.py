@@ -1,3 +1,4 @@
+# --- Standard Library Imports ---
 import json
 import os
 import pickle
@@ -48,7 +49,7 @@ def load_all_resources():
     Memuat model, tokenizer, dan semua kamus yang dibutuhkan.
     """
     with st.spinner("Memuat model dan semua komponen... Mohon tunggu."):
-        model_name = "nurulfauzh/nurul-fauziah-indobert"
+        model_name = "nurulfauzh/nurulfauziah-model"
         try:
             tokenizer = AutoTokenizer.from_pretrained(model_name)
             model = AutoModelForSequenceClassification.from_pretrained(model_name)
